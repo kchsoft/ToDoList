@@ -1,0 +1,46 @@
+
+
+
+body{
+    display: flex;    
+    flex-direction: column;
+}
+
+header{
+    flex-basis: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+header .hidden{
+    display: none;
+}
+
+header #service{
+    align-self: center;
+    flex-basis: 100px;
+} 
+
+header #service #greeting_name{
+    display: inline-block;
+} 
+
+header #login-form{
+    margin-top: 40px;
+}
+
+
+ header #clock, header #weather{
+    text-align: right;
+}
+
+header #clock{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+main{
+    text-align: center;
+    flex-basis: 350px;
+}
+

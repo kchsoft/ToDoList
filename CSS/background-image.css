@@ -1,0 +1,33 @@
+
+
+body.background_0{
+    background-image: url(../IMAGE/0.jpg); /*외부 폴더의 경우 "../" 로 인해 현재의 디렉토리를 벗어난다.*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+body.background_1{
+    background-image: url(../IMAGE/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+body.background_2{
+    background-image: url(../IMAGE/2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body.background_3{
+    background-image: url(../IMAGE/3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body.background_4{
+    background-image: url(../IMAGE/4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
