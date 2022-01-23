@@ -34,6 +34,10 @@ header #login-form{
     text-align: right;
 }
 
+header #weather{
+    flex-basis: 60px;
+}
+
 header #clock{
     margin-top: 10px;
     margin-bottom: 10px;
