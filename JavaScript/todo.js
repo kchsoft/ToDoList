@@ -1,7 +1,7 @@
-const toDoForm = document.querySelector("#todo-form");
+const toDoForm = document.querySelector(".todo-form");
 const toDoInput = toDoForm.querySelector("input");
 // const toDoInput = document.querySelector("#todo-form input"); 2와 같다.
-const toDoList = document.querySelector("#todo-list");
+const toDoList = document.querySelector(".todo-list");
 
 let toDos = [];
 const TODOS_KEY="todos";

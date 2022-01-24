@@ -44,7 +44,27 @@ header #clock{
 }
 
 main{
-    text-align: center;
+    display: flex;
+    flex-direction: row;
     flex-basis: 350px;
 }
+main .list{
+    border: 1px solid gray ;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+}
 
+
+main .list .todo-form{
+    text-align: center;
+    flex-grow: 1;
+}
+
+main .list .todo-list{
+    flex-grow: 1;
+}
+
+main .list .saved{
+    flex-grow: 1;
+}
