@@ -56,15 +56,19 @@ main .list{
 }
 
 
-main .list .todo-form{
+main .list .todo{
     text-align: center;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-main .list .todo-list{
-    flex-grow: 1;
+
+main .list .todo .todo-list button {
+    float: right;
 }
 
 main .list .saved{
     flex-grow: 1;
+    border-right:  2px solid powderblue;
 }
