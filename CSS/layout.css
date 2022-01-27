@@ -7,7 +7,7 @@ body{
 }
 
 header{
-    flex-basis: 200px;
+    flex-basis: 160px;
     display: flex;
     flex-direction: column;
 }
@@ -17,36 +17,49 @@ header .hidden{
 }
 
 header #service{
-    align-self: center;
-    flex-basis: 100px;
+    display: flex;
+    flex-direction: row;
+    height: 90px;
+
 } 
 
-header #service #greeting_name{
+header #service #greeting{
+    text-align: center;
+    flex-grow: 1;
+    margin-left: 170px;
+
+
+}
+
+header #service #greeting #greeting_name{
     display: inline-block;
 } 
 
-header #login-form{
+header #service #login-form{
+    text-align: center;
+    margin-top: 30px;
+    flex-grow: 1;
+    margin-left: 215px;
+
+}
+
+header #service #clock{
+    margin-bottom: 0px;
     margin-top: 40px;
 }
 
-
- header #clock, header #weather{
-    text-align: right;
-}
-
 header #weather{
+    text-align: right;
     flex-basis: 60px;
+    margin-bottom: 5px;
 }
 
-header #clock{
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
 
+/* -------------------------------------------- */
 main{
     display: flex;
     flex-direction: row;
-    flex-basis: 350px;
+    flex-basis: 425px;
 }
 main .list{
     border: 1px solid gray ;
@@ -72,3 +85,6 @@ main .list .saved{
     flex-grow: 1;
     border-right:  2px solid powderblue;
 }
+
+
+/* -------------------------------------------- */

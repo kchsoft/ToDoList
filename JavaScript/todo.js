@@ -1,12 +1,11 @@
 const toDoForm = document.querySelectorAll(".todo-form"); // Array
-const toDoInput = document.querySelectorAll("main input");
+const toDoInput = document.querySelectorAll("main .todo-form input");
 const toDoList = document.querySelectorAll(".todo-list");
-
 
 let toDos1 = [];
 let toDos2 = [];
 let toDos3 = [];
-const toDoFormSize= 3;
+const toDoFormSize = toDoForm.length;
 
 let toDosnum;
 const TODOS_KEY=["form_1","form_2","form_3"];
@@ -96,7 +95,7 @@ function deleteToDo(event){
     const p = event.target.parentElement; // event.target["parentElement"]도 가능
     p.remove();
     
-    const foundToDoForm = event.path[3].firstElementChild;
+    const foundToDoForm = event.path[3].children[1]; //html이 바뀔때 마다 주의해야함.
     let toDos = findToDos(foundToDoForm);
     filterToDo(toDos,p);
     
@@ -105,9 +104,10 @@ function deleteToDo(event){
 
 
 /*-------------------------------------------------------*/ 
-toDoForm[0].addEventListener("submit",handleToDoSubmit);
-toDoForm[1].addEventListener("submit",handleToDoSubmit);
-toDoForm[2].addEventListener("submit",handleToDoSubmit);
+for(let i = 0 ; i < toDoFormSize ; i++){
+    toDoForm[i].addEventListener("submit",handleToDoSubmit);
+}
+
 
 for(let FormNumber = 0 ; FormNumber < toDoFormSize ; FormNumber++)
 {
