@@ -12,7 +12,7 @@ header{
     flex-direction: column;
 }
 
-.hidden{
+header .hidden{
     display: none;
 }
 

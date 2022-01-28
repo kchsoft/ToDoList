@@ -38,7 +38,13 @@ function findToDos(event){
     if(event === 2) return toDos3;
 }
 
-function findToDoFormIndex(event){  
+function findToDoFormInput(event){
+    if(event.target === toDoForm[0]) return toDoInput[0];
+    if(event.target === toDoForm[1]) return toDoInput[1];
+    if(event.target === toDoForm[2]) return toDoInput[2];
+}
+
+function findToDoFormNumber(event){  
     if(event.target === toDoForm[0] || event == toDoForm[0]) return 0;
     if(event.target === toDoForm[1] || event == toDoForm[1]) return 1;
     if(event.target === toDoForm[2] || event == toDoForm[2]) return 2;
@@ -51,9 +57,9 @@ function findToDoFormIndex(event){
 
 function handleToDoSubmit(event){
     event.preventDefault();
-    const toDoInput = event.target.firstElementChild;
-    const newTodo = toDoInput.value;
-    toDoInput.value="";
+    const toDoInputTarget = findToDoFormInput(event);
+    const newTodo = toDoInputTarget.value;
+    toDoInputTarget.value="";
     const newTodoObj = {
         text : newTodo,
         id : Date.now()
@@ -78,18 +84,18 @@ function paintToDo(newTodo,event){
     
     p.appendChild(span);
     p.appendChild(button);
-    toDoList[findToDoFormIndex(event)].appendChild(p);
+    toDoList[findToDoFormNumber(event)].appendChild(p);
 }
 
 function saveToDos(event){
-    localStorage.setItem(TODOS_KEY[findToDoFormIndex(event)],JSON.stringify(findToDos(event)));
+    localStorage.setItem(TODOS_KEY[findToDoFormNumber(event)],JSON.stringify(findToDos(event)));
 }
 
 function deleteToDo(event){
     const p = event.target.parentElement; // event.target["parentElement"]도 가능
     p.remove();
-    console.log(event);
-    const foundToDoForm = event.path[3].children[2]; //html이 바뀔때 마다 주의해야함.
+    
+    const foundToDoForm = event.path[3].children[1]; //html이 바뀔때 마다 주의해야함.
     let toDos = findToDos(foundToDoForm);
     filterToDo(toDos,p);
     
@@ -103,14 +109,14 @@ for(let i = 0 ; i < toDoFormSize ; i++){
 }
 
 
-for(let FormIndex = 0 ; FormIndex < toDoFormSize ; FormIndex++)
+for(let FormNumber = 0 ; FormNumber < toDoFormSize ; FormNumber++)
 {
-    const savedToDos = localStorage.getItem(TODOS_KEY[FormIndex]);
+    const savedToDos = localStorage.getItem(TODOS_KEY[FormNumber]);
     if(savedToDos){
         const parsedToDos = JSON.parse(savedToDos);
-        setToDos(findToDos(FormIndex),parsedToDos);
-        for(let ListIndex = 0 ; ListIndex < parsedToDos.length; ListIndex++){
-            paintToDo(parsedToDos[ListIndex],FormIndex);
+        setToDos(findToDos(FormNumber),parsedToDos);
+        for(let ListNumber = 0 ; ListNumber < parsedToDos.length; ListNumber++){
+            paintToDo(parsedToDos[ListNumber],FormNumber);
         }
         // parsedToDos.forEach(paintToDo); //array 각 요소마다 forEach안에 있는 함수를 적용하여 실행, 즉 요소 개수만큼 실행된다.
     }
