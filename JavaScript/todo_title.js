@@ -5,6 +5,7 @@ const toDoTitleSize = toDoTitle.length;
 
 function handleToDoTitle(event){
     event.preventDefault();
+    console.log(this);
 }
 
 /*----------------------------------*/

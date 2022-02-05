@@ -38,11 +38,6 @@ function findToDos(event){
     if(event === 2) return toDos3;
 }
 
-function findToDoFormInput(event){
-    if(event.target === toDoForm[0]) return toDoInput[0];
-    if(event.target === toDoForm[1]) return toDoInput[1];
-    if(event.target === toDoForm[2]) return toDoInput[2];
-}
 
 function findToDoFormNumber(event){  
     if(event.target === toDoForm[0] || event == toDoForm[0]) return 0;
@@ -57,9 +52,10 @@ function findToDoFormNumber(event){
 
 function handleToDoSubmit(event){
     event.preventDefault();
-    const toDoInputTarget = findToDoFormInput(event);
-    const newTodo = toDoInputTarget.value;
-    toDoInputTarget.value="";
+    console.log(this);
+    const toDoInput = this.firstElementChild;
+    const newTodo = toDoInput.value;
+    toDoInput.value="";
     const newTodoObj = {
         text : newTodo,
         id : Date.now()
