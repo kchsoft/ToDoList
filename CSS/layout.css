@@ -6,14 +6,15 @@ body{
     flex-direction: column;
 }
 
+.hidden{
+    display: none;
+}
+
+
 header{
     flex-basis: 160px;
     display: flex;
     flex-direction: column;
-}
-
-header .hidden{
-    display: none;
 }
 
 header #service{
@@ -84,6 +85,12 @@ main .list .todo .todo-list button {
 main .list .saved{
     flex-grow: 1;
     border-right:  2px solid powderblue;
+}
+
+main .list .todo-title h3{
+    margin-top: 2px;
+    margin-bottom: 5px;
+
 }
 
 

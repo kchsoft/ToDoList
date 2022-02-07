@@ -52,7 +52,6 @@ function findToDoFormNumber(event){
 
 function handleToDoSubmit(event){
     event.preventDefault();
-    console.log(this);
     const toDoInput = this.firstElementChild;
     const newTodo = toDoInput.value;
     toDoInput.value="";
@@ -91,7 +90,7 @@ function deleteToDo(event){
     const p = event.target.parentElement; // event.target["parentElement"]도 가능
     p.remove();
     
-    const foundToDoForm = event.path[3].children[1]; //html이 바뀔때 마다 주의해야함.
+    const foundToDoForm = event.path[3].children[2]; //html이 바뀔때 마다 주의해야함.
     let toDos = findToDos(foundToDoForm);
     filterToDo(toDos,p);
     
