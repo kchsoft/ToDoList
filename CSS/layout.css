@@ -90,6 +90,7 @@ main .list .saved{
 main .list .todo-title h3{
     margin-top: 2px;
     margin-bottom: 5px;
+    display: inline-block;
 
 }
 

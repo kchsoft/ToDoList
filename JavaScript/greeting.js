@@ -7,6 +7,9 @@ const reset = document.querySelector("#greeting #reset_name");
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 
+/*----------------------------------------- */
+
+
 function onLogInSubmit(evnet) {
     event.preventDefault();
     loginForm.classList.add(HIDDEN_CLASSNAME);
@@ -16,26 +19,30 @@ function onLogInSubmit(evnet) {
     paintGreetings(username);
 }
 
+
 function paintGreetings(username) {
 greeting_name.innerHTML = `Hello ${username}`;
 greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
-const savedUsername = localStorage.getItem(USERNAME_KEY);
 
-if (savedUsername === null) {
-    loginForm.classList.remove(HIDDEN_CLASSNAME);
-    loginForm.addEventListener("submit", onLogInSubmit);
-} else
-    paintGreetings(savedUsername);
-
+    
 function ResetName(){
     localStorage.removeItem(USERNAME_KEY);
     greeting.classList.add(HIDDEN_CLASSNAME);
     loginForm.classList.remove(HIDDEN_CLASSNAME);
-    loginForm.addEventListener("submit", onLogInSubmit);
 }
 
+/*----------------------------------------- */
 
+
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+if (savedUsername === null)
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+ else
+    paintGreetings(savedUsername);
+
+
+loginForm.addEventListener("submit", onLogInSubmit);
 reset.addEventListener("click",ResetName);
 
