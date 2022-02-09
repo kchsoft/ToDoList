@@ -1,6 +1,6 @@
 const images = ["0", "1", "2", "3", "4"];
 const chosenimage = images[Math.floor(Math.random() * images.length)];
-// document.body.classList.add(`background_${chosenimage}`);
+document.body.classList.add(`background_${chosenimage}`);
 
 
 // 아래는 단순히 img 태그 삽입을 위한 코드
